@@ -25,6 +25,9 @@ class ChatProvider extends ChangeNotifier {
 
   Future<void> herReply() async {
     final herMessage = await getYesNoAnswer.getAnswer();
+    messageList.add(herMessage);
+    notifyListeners();
+    moveScrollToBottom();
   }
 
   //DAR UN EFECTO DE DELAY AL MOMENTO DE ENVIAR UN MENSAJE;
